@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'primeflex/primeflex.css';
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.card-form {
+  .p-card-body {
+    padding: 1.5rem;
+  }
+  .p-card-content {
+    padding: 0;
+  }
+}

@@ -1,0 +1,82 @@
+<router-outlet></router-outlet>
+
+<div class="container p-py-5">
+
+  <div class="p-grid">
+
+    <div class="p-md-6 p-md-offset-3">
+
+      <h2 class="title">Title here!</h2>
+
+      <p-card styleClass="shadow-2 card-form">
+
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+            <div class="p-fluid p-formgrid p-grid">
+
+              <div class="p-field p-col-12 p-md-6">
+                <label for="name">Name</label>
+                <input id="name" type="text" formControlName="name" class="ng-invalid ng-dirty" pInputText />
+                <small class="p-error block">Name is not available.</small>
+              </div>
+
+              <div class="p-field p-col-12 p-md-6">
+                <label for="price">Price</label>
+                <input id="price" type="text" formControlName="price" pInputText />
+              </div>
+
+              <div class="p-field p-col-12 p-md-6">
+                <label for="category">Category</label>
+                <p-dropdown 
+                  [options]="categories" 
+                  placeholder="Select a category" 
+                  formControlName="category"
+                  [showClear]="true">
+                </p-dropdown>
+              </div>
+
+              <div class="p-field p-col-12 p-md-6">
+                <label for="subCategory">Sub category</label>
+                <p-dropdown 
+                  [options]="subCategories" 
+                  placeholder="Select Sub category" 
+                  formControlName="subCategory"
+                  [showClear]="true">
+                </p-dropdown>
+              </div>
+
+              <div class="p-field p-col-12 p-md-6">
+                <label for="basic">Date</label>
+                <p-calendar inputId="basic" [(ngModel)]="date" formControlName="date"></p-calendar>
+              </div>
+
+            </div>
+
+            <div class="p-mt-3">
+              <button 
+                  pButton 
+                  type="submit" 
+                  icon="pi pi-plus" 
+                  class="p-button-secondary p-mr-2" 
+                  [disabled]="!form.valid"
+                  label="Save">
+              </button>
+              <button 
+                  pButton 
+                  type="button" 
+                  icon="pi pi-angle-left" 
+                  routerLink="/"
+                  class="p-button-secondary"
+                  label="Back">
+              </button>
+            </div>
+          
+        </form>
+
+      </p-card>
+
+    </div>
+
+  </div>
+
+</div>
